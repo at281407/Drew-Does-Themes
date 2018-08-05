@@ -117,7 +117,7 @@ add_action( 'widgets_init', 'drewdoesthemes_widgets_init' );
  * Enqueue scripts and styles.
  */
 function drewdoesthemes_scripts() {
-	wp_enqueue_style( 'drewdoesthemes-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'drewdoesthemes-style', get_template_directory_uri() . '/css/style.css' );
 
 	wp_enqueue_script( 'drewdoesthemes-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -128,6 +128,7 @@ function drewdoesthemes_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'drewdoesthemes_scripts' );
+
 
 /**
  * Implement the Custom Header feature.
