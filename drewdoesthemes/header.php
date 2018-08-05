@@ -22,6 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
+    <h1><?php echo "TEST" ?></h1>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'drewdoesthemes' ); ?></a>
 
 	<header id="masthead" class="site-header">
