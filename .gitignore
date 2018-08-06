@@ -2,6 +2,8 @@
 twentysixteen/
 twentyseventeen/
 twentyfifteen/
+node_modules/
+dist/
 
 #files
 index.php
