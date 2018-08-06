@@ -7,18 +7,18 @@ var runSequence = require('run-sequence');
 var del = require('del');
 
 gulp.task('sass', function(){
-    return gulp.src('sass/style.scss')
+    return gulp.src('drewdoesthemes/sass/style.scss')
                .pipe(sass())
-               .pipe(gulp.dest('css'))
+               .pipe(gulp.dest('drewdoesthemes/css'))
                .pipe(browserSync.reload({
                     stream: true
     }))
 });
 
 gulp.task('uglifyJs', function(){
-    return gulp.src('js/main.js')
+    return gulp.src('drewdoesthemes/js/main.js')
     .pipe(uglify())
-    .pipe(gulp.dest('../dist/drewdoesthemes/js'))
+    .pipe(gulp.dest('dist/drewdoesthemes/js'))
 });
 
 gulp.task('minifyCss', function(){
@@ -28,15 +28,22 @@ gulp.task('minifyCss', function(){
 });
 
 gulp.task('clean:dist', function() {
-    return del.sync('../dist');
-})
-  
+    return del.sync('dist');
+});
 
+gulp.task('getDatPhp', function(){
+    return gulp.src('drewdoesthemes/**/*.php')
+    .pipe(gulp.dest('dist/drewdoesthemes'))
+});
+  
 gulp.task('browserSync', function(){
     browserSync.init({
         host: "drewdoesdev.local",
         open: "external",
-        proxy: "http://drewdoesdev.local:8888"
+        proxy: "http://drewdoesdev.local:8888",
+        snippetOptions: {
+            ignorePaths: "wp-admin/**"
+        }
     })
 });
 
@@ -51,7 +58,8 @@ gulp.task('build', function(callback){
     [
         'sass', 
         'uglifyJs', 
-        'minifyCss'
+        'minifyCss',
+        'getDatPhp'
      ],
      callback
     )
