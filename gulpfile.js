@@ -5,15 +5,25 @@ var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
 var runSequence = require('run-sequence');
 var del = require('del');
+const autoprefixer = require('gulp-autoprefixer');
 
 gulp.task('sass', function(){
     return gulp.src('drewdoesthemes/sass/style.scss')
                .pipe(sass())
-               .pipe(gulp.dest('drewdoesthemes/css'))
+               .pipe(gulp.dest('drewdoesthemes'))
                .pipe(browserSync.reload({
                     stream: true
     }))
 });
+
+gulp.task('default', () =>
+    gulp.src('src/app.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(gulp.dest('dist'))
+);
 
 gulp.task('uglifyJs', function(){
     return gulp.src('drewdoesthemes/js/main.js')
@@ -22,9 +32,9 @@ gulp.task('uglifyJs', function(){
 });
 
 gulp.task('minifyCss', function(){
-    return gulp.src('drewdoesthemes/css/style.css')
+    return gulp.src('drewdoesthemes/style.css')
     .pipe(cssnano())
-    .pipe(gulp.dest('../dist/drewdoesthemes/css'))
+    .pipe(gulp.dest('../dist/drewdoesthemes'))
 });
 
 gulp.task('clean:dist', function() {
