@@ -4,6 +4,10 @@ twentyseventeen/
 twentyfifteen/
 node_modules/
 dist/
+<<<<<<< HEAD
+=======
+
+>>>>>>> at-08_02_18__init-buildSystem
 
 #files
 index.php
