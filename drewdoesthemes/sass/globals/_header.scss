@@ -1,0 +1,81 @@
+.site-header {
+    display: flex;
+    flex-flow: column nowrap;
+//	grid-column: 1 / 1;
+    justify-items: center;
+    align-items: center;
+    background-color: $white !important;
+    //border-right: 1px solid $blue;
+    box-shadow: 2px 0px 5px 1px rgba(0,0,0,0.2);
+    z-index: 1;
+    .header-mod {
+        display: flex;
+        flex-flow: column nowrap;
+        &:not(:last-child):after{
+            content: "";
+            height: 1px;
+            width: 100%;
+            background: linear-gradient(to right, transparent 0%,#A1C1D4 50%, transparent 100%);
+            display: block;
+            margin: 1.75rem 0 1.75rem 0;
+        }
+    }
+    .header-logo {
+        width: 95%;
+        padding: 2rem 0 0.5rem 0;
+        .custom-logo-link img {
+            width: 98%;
+            height: auto;
+        }
+    }
+    .navigation {
+        text-align: center;
+        font-size: 1.4rem;
+        width: 95%;
+        a {
+            padding-right: 0.5rem;
+            margin-bottom: 0.35rem;
+            font-weight: 600;
+
+        }
+    }
+    .meet-me {
+        width: 100%;
+        align-items: center;
+        img {
+            border-radius: 50%;
+            width: 45%;
+        }
+        q {
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            width: 75%;
+            margin-top: 1rem;
+            line-height: 2rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+    }
+    .social-media {
+        width: 80%;
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        margin-bottom: 1.5rem;
+        .social-link {
+            width: 33.3%;
+            height: 70px;
+            display: flex;
+            align-items:center;
+            justify-content: space-evenly;
+            color: $white;
+            visibility: hidden;
+            i {
+                font-size: 1.5em;
+                background-color: inherit;
+                padding: 0.75rem;
+                border-radius: 50%;
+                visibility: visible;
+            }
+        }
+    }
+}

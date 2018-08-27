@@ -1,0 +1,11 @@
+<svg viewBox="0 0 100 100" style="border: 0px solid black;">
+    <svg viewBox="-10 0 120 120" >
+        <circle cx="50" cy="50" r="50" fill="#1F4C80" />
+        <text class="innerLet" x="18" y="76" fill="#A1C1D4" style="font-family: 'Roboto', sans-serif;font-size: 5.5em;">D</text>
+        <text class="innerLet" x="24" y="82" fill="#A1C1D4" style="font-family: 'Roboto', sans-serif;font-size: 5.5em;">D</text>
+        <text class="innerLet" x="30" y="88" fill="#A1C1D4" style="font-family: 'Roboto', sans-serif;font-size: 5.5em;">D</text>
+    </svg>
+    <svg viewBox="0 0 100 100">
+        <text class="logoText" width="100%" class="logoText" x="8" y="95" fill="#05274C" style="font-family: 'Roboto', sans-serif;font-size: 0.75em;">Drew/Does/Dev</text>
+    </svg>
+</svg>
