@@ -84,6 +84,24 @@ endif;
 add_action( 'after_setup_theme', 'drewdoesthemes_setup' );
 
 /**
+ * Custom Options Page
+ */
+
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page("Global Options");
+}
+
+/**
+ * Font Awesome
+ */
+
+add_action( 'wp_enqueue_scripts', 'enqueue_load_fa' );
+function enqueue_load_fa() {
+   wp_enqueue_style( 'load-fa', 'https://use.fontawesome.com/releases/v5.2.0/css/all.css' );
+}
+
+/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -117,7 +135,7 @@ add_action( 'widgets_init', 'drewdoesthemes_widgets_init' );
  * Enqueue scripts and styles.
  */
 function drewdoesthemes_scripts() {
-	wp_enqueue_style( 'drewdoesthemes-style', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'drewdoesthemes-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'drewdoesthemes-global-script', get_template_directory_uri() . '/js/main.js');
 
@@ -130,7 +148,6 @@ function drewdoesthemes_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'drewdoesthemes_scripts' );
-
 
 /**
  * Implement the Custom Header feature.

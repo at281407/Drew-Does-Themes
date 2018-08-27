@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
 
-html {font-size: 1.125em;}
+//html {font-size: 1.125em;}
 
-body {
+/*body {
   background-color: white;
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   line-height: 1.45;
   color: #333;
-}
+}*/
 
 p {margin-bottom: 1.3em;}
 
@@ -34,6 +35,7 @@ h4 {font-size: 1.414em;}
 small, .font_small {font-size: 0.707em;}
 
 a {
+  font-family: $text-font;
   color: $blue;
   transition: color 0.3s ease;
   text-decoration: none;
