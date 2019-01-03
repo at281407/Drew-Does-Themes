@@ -1,16 +1,13 @@
 .site-header {
-    display: flex;
-    flex-flow: column nowrap;
-//	grid-column: 1 / 1;
-    justify-items: center;
-    align-items: center;
+    max-width: 300px;
+    height: 100%;
     background-color: $white !important;
-    //border-right: 1px solid $blue;
     box-shadow: 2px 0px 5px 1px rgba(0,0,0,0.2);
     z-index: 1;
     .header-mod {
         display: flex;
         flex-flow: column nowrap;
+        margin: 0 auto;
         &:not(:last-child):after{
             content: "";
             height: 1px;
@@ -23,6 +20,7 @@
     .header-logo {
         width: 95%;
         padding: 2rem 0 0.5rem 0;
+        margin: 0 auto;
         .custom-logo-link img {
             width: 98%;
             height: auto;
@@ -32,6 +30,7 @@
         text-align: center;
         font-size: 1.4rem;
         width: 95%;
+        margin: 0 auto;
         a {
             padding-right: 0.5rem;
             margin-bottom: 0.35rem;
@@ -42,6 +41,7 @@
     .meet-me {
         width: 100%;
         align-items: center;
+        margin: 0 auto;
         img {
             border-radius: 50%;
             width: 45%;
@@ -60,6 +60,7 @@
         width: 80%;
         flex-flow: row wrap;
         justify-content: space-evenly;
+        margin: 0 auto;
         margin-bottom: 1.5rem;
         .social-link {
             width: 33.3%;

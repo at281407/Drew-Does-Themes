@@ -25,23 +25,33 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 // Font
 @import "settings/fonts";
 
+//Pages
+@import "pages/front-page";
+
 html, body {
-	height: auto;
+	height: 100%;
 	background-color: $white !important;
 	margin: 0;
 }
 
 .site {
+	position: relative;
 	height: 100%;
-	display: grid;
-	grid-template-columns: 300px 1fr;
-	grid-column-gap: 1rem;
-	overflow: hidden;
+	display: flex;
+	flex-flow: row nowrap;
+	overflow-y: scroll;
+	overflow-x: hidden;
 	.site-content {
-		display: grid;
-		//grid-column: 2 / 2;
+		display: flex;
+        flex: 1;
 		justify-items: start;
 		background-color: $white !important;
 		z-index: 0;
+		overflow-y: scroll;
+		.content-area{
+			width: 95%;
+			margin: 0 auto;
+			
+		}
 	}
 }
